@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Outer Body -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M34,22 L74,22 C78.4,22 82,25.6 82,30 L82,78 C82,82.4 78.4,86 74,86 L34,86 C29.6,86 26,82.4 26,78 L26,30 C26,25.6 29.6,22 34,22 Z" />
+    <!-- Display Screen -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M32,28 L76,28 C78.2,28 80,29.8 80,32 L80,44 C80,46.2 78.2,48 76,48 L32,48 C29.8,48 28,46.2 28,44 L28,32 C28,29.8 29.8,28 32,28 Z" />
+    <!-- Accent Line in Display -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M64,38 L74,38 C74.6,38 75,38.4 75,39 L75,40 C75,40.6 74.6,41 74,41 L64,41 C63.4,41 63,40.6 63,40 L63,39 C63,38.4 63.4,38 64,38 Z" />
+    <!-- Button Row 1 -->
+    <path
+        android:fillColor="#334155"
+        android:pathData="M32,53 L44,53 C45.1,53 46,53.9 46,55 L46,61 C46,62.1 45.1,63 44,63 L32,63 C30.9,63 30,62.1 30,61 L30,55 C30,53.9 30.9,53 32,53 Z" />
+    <path
+        android:fillColor="#334155"
+        android:pathData="M48,53 L60,53 C61.1,53 62,53.9 62,55 L62,61 C62,62.1 61.1,63 60,63 L48,63 C46.9,63 46,62.1 46,61 L46,55 C46,53.9 46.9,53 48,53 Z" />
+    <path
+        android:fillColor="#6366F1"
+        android:pathData="M64,53 L76,53 C77.1,53 78,53.9 78,55 L78,61 C78,62.1 77.1,63 76,63 L64,63 C62.9,63 62,62.1 62,61 L62,55 C62,53.9 62.9,53 64,53 Z" />
+    <!-- Button Row 2 -->
+    <path
+        android:fillColor="#334155"
+        android:pathData="M32,66 L44,66 C45.1,66 46,66.9 46,68 L46,74 C46,75.1 45.1,76 44,76 L32,76 C30.9,76 30,75.1 30,74 L30,68 C30,66.9 30.9,66 32,66 Z" />
+    <path
+        android:fillColor="#334155"
+        android:pathData="M48,66 L60,66 C61.1,66 62,66.9 62,68 L62,74 C62,75.1 61.1,76 60,76 L48,76 C46.9,76 46,75.1 46,74 L46,68 C46,66.9 46.9,66 48,66 Z" />
+    <path
+        android:fillColor="#6366F1"
+        android:pathData="M64,66 L76,66 C77.1,66 78,66.9 78,68 L78,74 C78,75.1 77.1,76 76,76 L64,76 C62.9,76 62,62.1 62,74 L62,68 C62,66.9 62.9,66 64,66 Z" />
+    <!-- Button Row 3 Equals Accent -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M32,79 L60,79 C61.1,79 62,79.9 62,81 L62,83 C62,84.1 61.1,85 60,85 L32,85 C30.9,85 30,84.1 30,83 L30,81 C30,79.9 30.9,79 32,79 Z" />
+    <path
+        android:fillColor="#6366F1"
+        android:pathData="M64,79 L76,79 C77.1,79 78,79.9 78,81 L78,83 C78,84.1 77.1,85 76,85 L64,85 C62.9,85 62,84.1 62,83 L62,81 C62,79.9 62.9,79 64,79 Z" />
+</vector>

@@ -1,0 +1,6 @@
+{
+  "name": "Calculator",
+  "description": "A premium, modern scientific calculator app with calculation history, custom themes, and haptic feedback.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
