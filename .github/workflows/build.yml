@@ -8,16 +8,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      - name: Set up JDK 17 (Required for Gradle & Kotlin Compiler)
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Install Gradle & Generate Wrapper
+      - name: Install & Upgrade Gradle Wrapper to 8.7
         run: |
           sudo apt-get update && sudo apt-get install -y gradle
-          gradle wrapper
+          gradle wrapper --gradle-version 8.7
           chmod +x gradlew
 
       - name: Build Debug APK
