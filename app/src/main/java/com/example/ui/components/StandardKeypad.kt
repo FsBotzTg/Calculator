@@ -16,13 +16,15 @@ fun StandardKeypad(
     hapticsEnabled: Boolean,
     soundEnabled: Boolean,
     onInput: (String) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    isScientific: Boolean = false
 ) {
-    val buttonHeight = 64.dp
+    val buttonHeight = if (isScientific) 42.dp else 62.dp
+    val spacing = if (isScientific) 5.dp else 10.dp
 
     Column(
         modifier = modifier.fillMaxWidth(),
-        verticalArrangement = Arrangement.spacedBy(10.dp)
+        verticalArrangement = Arrangement.spacedBy(spacing)
     ) {
         // Row 1: AC, ⌫, %, ÷
         Row(

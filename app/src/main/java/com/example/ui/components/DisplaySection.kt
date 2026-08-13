@@ -51,12 +51,25 @@ fun DisplaySection(
         scrollState.animateScrollTo(scrollState.maxValue)
     }
 
+    val vertPadding = if (isScientific) 12.dp else 20.dp
+    val exprFontSize = if (isScientific) {
+        if (isEvaluated) 20.sp else 28.sp
+    } else {
+        if (isEvaluated) 28.sp else 38.sp
+    }
+    val resultFontSize = if (isScientific) {
+        if (isEvaluated) 32.sp else 20.sp
+    } else {
+        if (isEvaluated) 44.sp else 24.sp
+    }
+    val spacerHeight = if (isScientific) 4.dp else 10.dp
+
     Box(
         modifier = modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(24.dp))
             .background(colors.displayBg)
-            .padding(horizontal = 24.dp, vertical = 20.dp)
+            .padding(horizontal = 20.dp, vertical = vertPadding)
             .testTag("calculator_display")
     ) {
         Column(
@@ -98,7 +111,7 @@ fun DisplaySection(
                 }
             }
 
-            Spacer(modifier = Modifier.height(12.dp))
+            Spacer(modifier = Modifier.height(spacerHeight))
 
             // Current Expression
             Row(
@@ -111,7 +124,7 @@ fun DisplaySection(
                 Text(
                     text = if (expression.isEmpty()) "0" else expression,
                     color = if (isEvaluated) colors.textSecondary else colors.textPrimary,
-                    fontSize = if (isEvaluated) 28.sp else 38.sp,
+                    fontSize = exprFontSize,
                     fontWeight = FontWeight.Medium,
                     fontFamily = FontFamily.Default,
                     textAlign = TextAlign.End,
@@ -120,7 +133,7 @@ fun DisplaySection(
                 )
             }
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(spacerHeight))
 
             // Result Preview / Final Evaluated Result
             AnimatedContent(
@@ -135,7 +148,7 @@ fun DisplaySection(
                 Text(
                     text = targetText,
                     color = if (isEvaluated) colors.textPrimary else colors.textSecondary,
-                    fontSize = if (isEvaluated) 44.sp else 24.sp,
+                    fontSize = resultFontSize,
                     fontWeight = FontWeight.Bold,
                     fontFamily = FontFamily.Default,
                     textAlign = TextAlign.End,

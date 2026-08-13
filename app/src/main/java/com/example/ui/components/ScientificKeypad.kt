@@ -20,11 +20,11 @@ fun ScientificKeypad(
     onInput: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val buttonHeight = 46.dp
+    val buttonHeight = 36.dp
 
     Column(
         modifier = modifier.fillMaxWidth(),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(5.dp)
     ) {
         // Row 1: RAD/DEG, sin, cos, tan
         Row(

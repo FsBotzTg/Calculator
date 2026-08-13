@@ -76,9 +76,9 @@ fun CalculatorButton(
     Box(
         modifier = modifier
             .scale(scale)
-            .defaultMinSize(minWidth = 48.dp, minHeight = 48.dp)
+            .defaultMinSize(minWidth = 36.dp, minHeight = 32.dp)
             .shadow(
-                elevation = if (type == ButtonType.EQUALS || type == ButtonType.OPERATOR) 4.dp else 1.dp,
+                elevation = if (type == ButtonType.EQUALS || type == ButtonType.OPERATOR) 3.dp else 1.dp,
                 shape = shape
             )
             .clip(shape)
@@ -91,7 +91,7 @@ fun CalculatorButton(
                 onClick()
             }
             .testTag("btn_$text")
-            .padding(vertical = 12.dp, horizontal = 8.dp),
+            .padding(vertical = 4.dp, horizontal = 4.dp),
         contentAlignment = Alignment.Center
     ) {
         Text(

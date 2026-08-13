@@ -69,14 +69,14 @@ fun CalculatorScreen(
                 .padding(innerPadding)
                 .statusBarsPadding()
                 .navigationBarsPadding()
-                .padding(horizontal = 16.dp, vertical = 8.dp),
+                .padding(start = 16.dp, top = 0.dp, end = 16.dp, bottom = 6.dp),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             // Top Action Bar
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 4.dp),
+                    .padding(vertical = 0.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -87,7 +87,7 @@ fun CalculatorScreen(
                 ) {
                     Box(
                         modifier = Modifier
-                            .size(36.dp)
+                            .size(32.dp)
                             .clip(CircleShape)
                             .background(colors.operatorBtnBg),
                         contentAlignment = Alignment.Center
@@ -96,12 +96,12 @@ fun CalculatorScreen(
                             imageVector = Icons.Default.Calculate,
                             contentDescription = null,
                             tint = Color.White,
-                            modifier = Modifier.size(20.dp)
+                            modifier = Modifier.size(18.dp)
                         )
                     }
                     Text(
                         text = "Calculator",
-                        fontSize = 18.sp,
+                        fontSize = 17.sp,
                         fontWeight = FontWeight.Bold,
                         color = colors.textPrimary
                     )
@@ -110,7 +110,7 @@ fun CalculatorScreen(
                 // Mode Toggle Pill & Buttons
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    horizontalArrangement = Arrangement.spacedBy(4.dp)
                 ) {
                     // Scientific Toggle Button
                     Box(
@@ -186,7 +186,7 @@ fun CalculatorScreen(
                 }
             }
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(4.dp))
 
             // Display Section
             DisplaySection(
@@ -196,10 +196,12 @@ fun CalculatorScreen(
                 errorMessage = state.errorMessage,
                 angleUnit = state.angleUnit,
                 isScientific = state.isScientific,
-                modifier = Modifier.weight(1f, fill = false)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f)
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(if (state.isScientific) 6.dp else 12.dp))
 
             // Scientific Keypad (Expandable)
             AnimatedVisibility(
@@ -214,7 +216,7 @@ fun CalculatorScreen(
                         soundEnabled = state.soundEnabled,
                         onInput = { viewModel.onInput(it) }
                     )
-                    Spacer(modifier = Modifier.height(10.dp))
+                    Spacer(modifier = Modifier.height(5.dp))
                 }
             }
 
@@ -222,7 +224,8 @@ fun CalculatorScreen(
             StandardKeypad(
                 hapticsEnabled = state.hapticsEnabled,
                 soundEnabled = state.soundEnabled,
-                onInput = { viewModel.onInput(it) }
+                onInput = { viewModel.onInput(it) },
+                isScientific = state.isScientific
             )
         }
     }
